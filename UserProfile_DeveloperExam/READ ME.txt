@@ -1,0 +1,45 @@
+﻿create this Tables on your local MS SQL:
+USE [Activities]
+GO
+/****** Object:  Table [dbo].[Running_Activities]    Script Date: 13/08/2024 12:49:45 am ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Running_Activities](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Location] [nvarchar](50) NULL,
+	[Started] [datetime] NULL,
+	[Ended] [datetime] NULL,
+	[Distance] [float] NULL,
+	[Duration] [time](7) NULL,
+	[Average_Pace] [float] NULL,
+ CONSTRAINT [PK_Running_Activities] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[User_Profile]    Script Date: 13/08/2024 12:49:45 am ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[User_Profile](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NULL,
+	[Weight] [float] NULL,
+	[Height] [float] NULL,
+	[Birth_date] [datetime] NULL,
+	[Age] [int] NULL,
+	[BMI] [float] NULL,
+ CONSTRAINT [PK_User_Profile] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+=======================================================================================
+
+it includes here the unit testing , web api .net core , SWAGGER, logs from console
